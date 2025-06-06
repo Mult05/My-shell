@@ -1,0 +1,15 @@
+main(){
+
+First determine if we are in batch or interactive mode with isatty()
+Argument Parsing
+Reading Input from STDIn or file
+printing message if interactive
+loops through lines and calls handle_command()
+
+
+}
+
+handle_command()
+
+tokenizer_function()
+

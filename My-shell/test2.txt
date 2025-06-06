@@ -1,0 +1,60 @@
+# --- Built-in Commands ---
+pwd
+cd ..
+pwd
+cd nonexistent_dir
+which ls
+which cd
+which nonexistent_cmd
+cd My-shell
+
+# --- Wildcards ---
+ls *.c
+ls *.thisfiledoesntexist
+ls ./testdir/*.txt
+echo done with wildcards
+
+# --- Redirection (requires input.txt to exist) ---
+echo This is going into a file > output.txt
+cat < output.txt
+echo Overwriting > output.txt
+cat < output.txt
+
+# --- Redirection: syntax error ---
+echo missing > 
+echo still works after syntax error
+
+# --- Combined Redirection ---
+cat < input.txt > outcopy.txt
+cat < outcopy.txt
+
+# --- Pipe ---
+echo hello | wc -c
+ls *.txt | wc -l
+cat input.txt | grep test
+cat input.txt | nonexistent_cmd
+
+# --- Conditional Execution ---
+false
+and echo this should not print
+or echo this should print
+
+true
+or echo this should not print
+and echo this should print
+
+# --- Conditionals + Die ---
+#false
+#or die command failed and now exiting
+
+# --- Edge: command with both redirections, reversed order ---
+cat > tmpout.txt < input.txt
+
+# --- Edge: wildcard and pipe ---
+cat *.txt | grep example
+
+# --- Complex pipeline + redirection should fail (not supported) ---
+echo test | grep t > testout.txt
+
+# --- End testing ---
+exit

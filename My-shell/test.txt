@@ -1,0 +1,38 @@
+# This is a comment and should be ignored
+echo Hello, world!
+
+pwd
+
+cd ..
+
+pwd
+
+cd My-shell
+
+# Testing redirecti
+echo This is going into a file > output.txt
+
+# Using a wildcard (make sure some .c files exist in this directory!)
+ls *.c
+
+# Redirection input (requires input.txt to exist)
+cat < input.txt
+
+# Pipe example
+echo hello | tr a-z A-Z
+
+# Conditional execution: only runs if previous succeeded
+and echo "Previous succeeded"
+
+# Conditional execution: only runs if previous failed
+or echo "You should not see this"
+
+# Test which
+which ls
+
+# Intentional failure to test 'or'
+false
+or die whoops
+
+# Exit the shell
+exit
